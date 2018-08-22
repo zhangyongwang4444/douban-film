@@ -108,7 +108,7 @@ var top250 = {
     bind: function () {
         var _this = this
         this.$element.scroll(function () {
-                _this.start()      
+            _this.start()
         })
     },
     start: function () {
@@ -134,7 +134,7 @@ var top250 = {
             if (_this.index >= ret.total) {
                 _this.isFinish = true
             }
-            callback&&callback(ret)
+            callback && callback(ret)
         }).fail(function () {
             console.log('数据异常')
         }).always(function () {
@@ -215,7 +215,7 @@ var usBox = {
             url: 'http://api.douban.com/v2/movie/us_box',
             dataType: 'jsonp'
         }).done(function (ret) {
-            callback&&callback(ret)
+            callback && callback(ret)
         }).fail(function () {
             console.log('数据异常')
         }).always(function () {
@@ -281,9 +281,9 @@ var search = {
         this.bind()
         this.start()
     },
-    bind:function(){
+    bind: function () {
         var _this = this
-        this.$element.find('.button').click(function(){
+        this.$element.find('.button').click(function () {
             _this.keyword = _this.$element.find('input').val()
             _this.start()
         })
@@ -299,12 +299,12 @@ var search = {
         _this.$element.find('.loading').show()
         $.ajax({
             url: 'http://api.douban.com/v2/movie/search',
-            data:{
+            data: {
                 q: _this.keyword
             },
             dataType: 'jsonp'
         }).done(function (ret) {
-            callback&&callback(ret)
+            callback && callback(ret)
         }).fail(function () {
             console.log('数据异常')
         }).always(function () {
@@ -316,7 +316,7 @@ var search = {
         var _this = this
         console.log(data)
         data.subjects.forEach(function (movie) {
-            
+
             var tpl = `
                         <div class="item">
                             <a href="#">
